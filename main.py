@@ -47,3 +47,5 @@ if __name__ == '__main__':
             print("Your blood percentage is too high\nPlease see a doctor")
     else:
         print("Sex must be M (Male) or F (Female)")
+
+    input("Press return to Exit:")
