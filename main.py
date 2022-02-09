@@ -8,7 +8,7 @@
 # 5. Determine the assigned gender of the patient
 # 6. Print out the information to the console
 
-from datetime import date, datetime
+from datetime import date
 
 from stdnum.exceptions import *
 from stdnum.util import clean
