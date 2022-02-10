@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
     print("Please enter the patients name, cpr-number and address.")
     name = input("Name: ")
-    cpr = input("CPR:")
+    cpr = input("CPR: ")
     address = input("Address:")
     print("The patients name: " + name + ", cpr: " + cpr + ", address: " + address)
     today = date.today()
