@@ -1,4 +1,4 @@
-# Exercise 5
+# Week 1 Exercise 5
 
 Modify the program to perform minimal error checking: 
 are strings only composed of non-number characters with a maximum length. 
