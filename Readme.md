@@ -45,7 +45,7 @@ The two functions ```gender``` and ```age``` will calculate the gender and the a
 It will also need to check if the name only contains letters 
 (we don't handle special names like o'Harry)
 
-```get_cpr``` needs to validate the cpr-number - here we have used the  ```stdnum.dk.cpr``` library (why re-invent the wheel`?)
+```get_cpr``` needs to validate the cpr-number - here we have used the  ```stdnum.dk.cpr``` library (why re-invent the wheel?)
 
 ```get_address``` performs similar checks.
 
