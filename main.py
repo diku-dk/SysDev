@@ -16,7 +16,9 @@ if __name__ == '__main__':
         except:
             print("days must be integer")
             continue
+
         dayPrice_input = input("Price pr day: ")
+
         try:
             dayPrice_float = float(dayPrice_input)
         except:
