@@ -87,7 +87,7 @@ def get_address() -> str:
         zip_code = input("Postal code: ").strip()
         city_name = input("City: ").strip()
         # street name must be at least two alphabetic characters long
-        # allow for white spaces like in "Store Kongsgade"
+        # allow for white spaces like in "Store Kongensgade"
         # more clever matching can be done wth regexp....
         street_name_stripped = street_name.replace(" ","")
         valid = len(street_name) >= 2 and street_name_stripped.isalpha()
@@ -103,7 +103,10 @@ def get_address() -> str:
         if not valid:
             print("Zip code must be exactly 4 digits")
         # City must be at least two alphabetic characters long
-        valid = (valid and len(city_name) >= 2 and city_name.isalpha())
+        # allow for white spaces like in "København Ø"
+        city_name_stripped = city_name.replace(" ","")
+
+        valid = (valid and len(city_name) >= 2 and city_name_stripped.isalpha())
         if not valid:
             print("City must be at least two alphabetic characters long")
         if not valid:
