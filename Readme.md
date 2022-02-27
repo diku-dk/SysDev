@@ -135,6 +135,8 @@ than the 'Display area'.
 We do this by adding a 'Scroll area' container. Drag it from the left side menu and into
 the Designer window:
 
+![Designer scrollarea](./Designer-Scrollarea.png)
+
 
 
 
