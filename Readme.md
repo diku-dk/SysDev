@@ -1,6 +1,6 @@
-[Building a GUI](#Building a Qt GUI)
+[Building a GUI](#Building a Qt GUI)  
 [Creating you first GUI](#Creating your first simple GUI)
-#System Development Cookbook 2022
+# System Development Cookbook 2022
 
 This repository is a meant as a 'bridge' between the theoretical material being
 taught in ['5100-B3-4F22 - Systems Development'](https://kurser.ku.dk/course/ndab19000u/) at Copenhagen University 2022 
@@ -30,7 +30,7 @@ The Cookbook assumes that you have already installed the required Python version
 as described in the 
 [Install guide](https://docs.google.com/document/d/1pYUBz4XfURxj9aH_6geXm-jrBIohgb7S/edit)
 
-##Building a Qt GUI
+## Building a Qt GUI
 
 The [QT GUI framework](https://www.qt.io/) has been chosen for this course as it is a cross-platform framework 
 (works on Linux, Windows and Mac as well as som other platforms like Android and iOS). 
@@ -51,7 +51,7 @@ There are many quick introductions to PyQT6 on the internet. One can be found
 
 The next sections will teach you how to create a GUI using Qt Designer. 
 
-###Using Qt designer.
+### Using Qt designer.
 Depending on your OS you start Qt designer in different ways.  
 
 **Mac**  
@@ -83,7 +83,7 @@ I will recommend - for now - to have pyqt6 installed in your site libs (and not 
 that you always have the same path to designer.
 
 
-###Creating your first simple GUI
+### Creating your first simple GUI
 
 When Designer is launched you are met by the following dialog:
 
