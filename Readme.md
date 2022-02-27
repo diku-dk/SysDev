@@ -1,5 +1,5 @@
-[Building a GUI](#Building a Qt GUI)  
-[Creating you first GUI](#Creating your first simple GUI)
+[Building a GUI](#building-a-qt-gui)  
+[Creating you first GUI](#creating-your-first-simple-GUI)
 # System Development Cookbook 2022
 
 This repository is a meant as a 'bridge' between the theoretical material being
