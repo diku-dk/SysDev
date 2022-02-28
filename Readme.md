@@ -69,7 +69,7 @@ Try to search for the file in order to get the right location.
 **Windows**  
 
 If you have installed Qt-6 in Pythons site libs (can be done by opening a Windows terminal as administrator and run
-`pip intall pyqt6 pyqt6-tools`) Designer will typically be located in
+`pip install pyqt6 pyqt6-tools`) Designer will typically be located in
 `C:\Users\your-username\AppData\Local\Programs\Python\Python39\Lib\site-packages\qt6_applications\Qt\bin`
 
 If you can't find it the search for `Designer.exe`
@@ -133,9 +133,16 @@ so that we are still able to see the content even if we make the window smaller
 than the 'Display area'.
 
 We do this by adding a 'Scroll area' container. Drag it from the left side menu and into
-the Designer window:
+the Designer window and resize it to fit the application 
+(yes we could set some more generic constraints - but we won't
+do that for now):
 
 ![Designer scrollarea](./Designer-Scrollarea.png)
+
+Now we are missing to insert the labels, the input fields and
+underneath a textarea widget to display the result.
+
+
 
 
 
