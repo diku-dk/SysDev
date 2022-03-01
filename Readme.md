@@ -2,6 +2,9 @@
 [Creating you first GUI](#creating-your-first-simple-gui)  
 [The UI file](#the-ui-file)  
 [PantUML](#uml-using-plantuml)
+
+
+
 # System Development Cookbook 2022
 
 This repository is a meant as a 'bridge' between the theoretical material being
@@ -294,6 +297,40 @@ Other examples of markup language are HTML or Markdown (which is used to create 
 
 
 ## UML using PlantUML
+
+The UML (Unified Modeling Language) diagrams for your project can be generated via
+The PlantUML plugin in PyCharm (or VScode if you are using VScode).
+
+If you haven't installed the plugin yet, then find it in preferences/settings->plugin->Marketplace
+and install it.
+
+It requires that you have installed graphviz (the VScode plugin does that 'automagically' on both Mac
+and Windows. In PyCharm we must do a little extra work). 
+On Mac you will need to install graphviz via the command `brew install graphviz`.
+After you have installed graphviz, then run `which dot`. It should display
+something like `/usr/local/bin/dot`.
+In Pycharm settings/preferences insert the found result here and you should be
+able to render diagrams in plantUML (note that on the implementation on my Windows laptop this 
+field is empty.)
+
+![graphviz-path](graphviz-path.png)
+
+You should now be ready to create your first diagrams:
+
+Right-click in your project explorer and select new and PlantUML File:
+![new-plantuml](platuml-file-new.png)
+
+Now select the type of diagram you are going to create.
+
+Here are the generated e xamples of use case and class diagrams:
+
+![usecase](usecasepuml.png)
+![classdiagram](classdiagram-puml.png)
+
+Full documentation for PlantUML syntax and a collection of examples can be 
+found here https://plantuml.com/ and here https://real-world-plantuml.com/
+
+Happy UML'ing!
 
 
 
