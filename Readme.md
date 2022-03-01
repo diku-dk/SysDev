@@ -1,7 +1,9 @@
 [Building a GUI](#building-a-qt-gui)  
 [Creating you first GUI](#creating-your-first-simple-gui)  
 [The UI file](#the-ui-file)  
-[PantUML](#uml-using-plantuml)
+[PantUML](#uml-using-plantuml)  
+[Python OOP](#python-oop)  
+[Creating an application using a GUI](#creating-an-application-using-a-gui)
 
 
 
@@ -35,7 +37,9 @@ The Cookbook assumes that you have already installed the required Python version
 as described in the 
 [Install guide](https://docs.google.com/document/d/1pYUBz4XfURxj9aH_6geXm-jrBIohgb7S/edit)
 
-## Building a Qt GUI [^](#system-development-cookbook-2022)
+## Building a Qt GUI
+[to top ^](#system-development-cookbook-2022)
+
 
 The [QT GUI framework](https://www.qt.io/) has been chosen for this course as it is a cross-platform framework 
 (works on Linux, Windows and Mac as well as som other platforms like Android and iOS). 
@@ -56,7 +60,10 @@ There are many quick introductions to PyQT6 on the internet. One can be found
 
 The next sections will teach you how to create a GUI using Qt Designer. 
 
-### Using Qt designer [^](#system-development-cookbook-2022)
+### Using Qt designer
+[to top ^](#system-development-cookbook-2022)
+
+
 Depending on your OS you start Qt designer in different ways.  
 
 **Mac**  
@@ -88,7 +95,8 @@ I will recommend - for now - to have pyqt6 installed in your site libs (and not 
 that you always have the same path to designer.
 
 
-### Creating your first simple GUI [^](#system-development-cookbook-2022)
+### Creating your first simple GUI
+[to top ^](#system-development-cookbook-2022)
 
 When Designer is launched you are met by the following dialog:
 
@@ -198,7 +206,8 @@ For a mockup it can also be practical to set some sample text for the input fiel
 Feel free to do so! And notice that you can save the UI as an image (png) file.
 
 
-### The UI file [^](#system-development-cookbook-2022)
+### The UI file
+[to top ^](#system-development-cookbook-2022)
 
 Let us have a look at the resulting ui file (or the first part of it).
 
@@ -293,6 +302,7 @@ Other examples of markup language are HTML or Markdown (which is used to create 
 
 
 ## UML using PlantUML
+[to top ^](#system-development-cookbook-2022)
 
 The UML (Unified Modeling Language) diagrams for your project can be generated via
 The PlantUML plugin in PyCharm (or VScode if you are using VScode).
@@ -328,20 +338,47 @@ found here https://plantuml.com/ and here https://real-world-plantuml.com/
 
 Happy UML'ing!
 
+## Python OOP
+[to top ^](#system-development-cookbook-2022)
 
+As this is also a course in how to develop software that can easily/easier be reused
+I will simply not reinvent the whell but instead advise you to spend some minutes with this excellent guide on basic OOP in 
+Python: https://realpython.com/python3-object-oriented-programming/ 
 
+Key take-outs are  
+- Classes vs instances (objects)
+- Methods (at class and instance level)
+- How to instantiate and object (the `__init__` metod - the contructor)
+- Special Instance methods (`__str__` - to represent the object as a string)
+- Class Inheritance
 
+Once you have familiarized yourself with these basic concepts you might
+also want to consult the following page https://realpython.com/instance-class-and-static-methods-demystified/
+that explains the difference between instance methods, class methods and static methods (the
+latter typically being used for supporting e.g. functions that are independent of
+the class or objects).
 
+You might have learned about private, public and protected attributes and methods.
+As can be seen here
+https://betterprogramming.pub/public-private-and-protected-access-modifiers-in-python-9024f4c1dd4 
+the implementation in Python is not strict as in Java or C++ .
+The notation being used (`__`for private, `_` for protected) is more to be seen as 
+a **strong** recommendation on not to access the attribute from outside the class,
+but it is technically still possible (but please don't!)...
+A good practise would be to go with properties as explained here in order to get
+managed attributes: https://realpython.com/python-property/
 
+For now don't worry too much - we will get to see some examples in the weekly exercises and in this cookbook.
 
-## Creating an application with a GUI [^](#system-development-cookbook-2022)
-
-We have now created a user interface. In week 1 and 2 of the course we created a small
+## Creating an application using a GUI
+[to top ^](#system-development-cookbook-2022)
+We have now created a graphical user interface. In week 1 and 2 of the course we created a small
 program that just used the console as input.
 
 Let us create a fully workable application with the user interface we just created.
-Note that it hasn't been turned into being fully object-oriented - but we will get
-there at the end of the day..
+
+
+
 
 
 
