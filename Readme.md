@@ -87,13 +87,13 @@ that you always have the same path to designer.
 
 When Designer is launched you are met by the following dialog:
 
-![Designer-Launcher](./Launch-Designer.png)
+![Designer-Launcher](Launch-Designer.png)
 
 Choose 'Main Window' and press create (leave everything else unchanged)
 
 You will then see a window like this:
 
-![Designer-1](./Designer-1.png)
+![Designer-1](Designer-1.png)
 
 On the left-hand side you see the standard GUI components that are available
 in Qt6. In the middle you see the GUI, that you are currently designing.
@@ -137,10 +137,162 @@ the Designer window and resize it to fit the application
 (yes we could set some more generic constraints - but we won't
 do that for now):
 
-![Designer scrollarea](./Designer-Scrollarea.png)
+![Designer scrollarea](Designer-Scrollarea.png)
 
-Now we are missing to insert the labels, the input fields and
+Now we are missing insertion of labels, input fields and
 underneath a textarea widget to display the result.
+
+We could do this by adding labels and Line Edit widgets and place them manualer.
+The Grid layout or vertical layouts could help os in order to distribute
+the widgets evenly over the screen.  
+However we will use the [Form Layout](https://doc.qt.io/qt-6/qformlayout.html).
+It as a label and input field and the layout is made in an 'OS native' fashion.
+
+Drag the "Form Layout" into the application and resize it to a suitable size
+
+![Designer_formlayout](Designer-form-layout.png)
+
+Now time to insert a form row: Right-click in the form layout and select "Add form layout row".
+Fill in the form like this and press OK:
+
+![Form_row_1st](Designer-form-row.png)
+
+The two names are important - those are the ones that at link to your Python code.
+Leave them as suggest.
+
+The result after pressing OK is
+![After_first_row](Designer-after-1st-row.png)
+
+
+Now continue to add rows for surname, cpr-number, street, street number, extension (e.g. 1.tv),
+zipcode and city:
+
+![All-inputs](Designer-all-input.png)
+
+Let us add some 'Push Buttons' For "Register Patient" and "Clear Fields".
+You can right-click on the buttons in order to change the text and the object names.
+
+![Button-object-change](Designer-push-change-text.png)
+
+Finally add a "Text Edit Field" (We will need in order to display the output -
+Yes it will be a boring application: It will display the inputs together with
+a computed age - it is only made for demonstration purposes and to give you
+an idea of what is possible and easy to create wth QT Designer).
+
+The result should look something like this:
+
+![Final-view](Designer-final-one.png)
+
+Using the preview (in the forms menu) I get..
+
+![preview](Designer-preview.png)
+
+
+Please notice all the properties you can set on the text fields:
+Among others you have tooltips (that is display a little message, when you hover the mouse
+over the field) and input masks (That is: allow only certain characters for the input -
+practical for CPR numbers)
+
+For a mockup it can also be practical to set some sample text for the input fields.
+Feel free to do so! And notice that you can save the UI as an image (png) file.
+
+
+### The UI file
+
+Let us have a look at the resulting ui file (or the first part of it).
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>My First App</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>761</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>759</width>
+       <height>529</height>
+      </rect>
+     </property>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>471</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="firstNameLabel">
+         <property name="text">
+          <string>First Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="firstNameLineEdit">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string/>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+....
+```
+
+It is an XML (Extensible Markup Language) file and each GUI component
+is described via tags and properties. The important ones for now will
+be the property names as we will need them in order to refer to them in the Python program.
+Other properties can easily be changed via a normal text editor (I can recommend notepad++
+if you are using Windows) or you can set up PyCharm as your default editor for ui files.
+
+
+
+
+
+
+
+
+
+
 
 
 
