@@ -1,5 +1,5 @@
 [Building a GUI](#building-a-qt-gui)  
-[Creating you first GUI](#creating-your-first-simple-GUI)  
+[Creating you first GUI](#creating-your-first-simple-gui)  
 [The UI file](#the-ui-file)  
 [PantUML](#uml-using-plantuml)
 # System Development Cookbook 2022
