@@ -1,5 +1,7 @@
 [Building a GUI](#building-a-qt-gui)  
-[Creating you first GUI](#creating-your-first-simple-GUI)
+[Creating you first GUI](#creating-your-first-simple-GUI)  
+[The UI file](#the-ui-file)  
+[PantUML](#uml-using-plantuml)
 # System Development Cookbook 2022
 
 This repository is a meant as a 'bridge' between the theoretical material being
@@ -276,13 +278,36 @@ Let us have a look at the resulting ui file (or the first part of it).
         </widget>
        </item>
 ....
+
 ```
+
+The full file is located in the repository.
 
 It is an XML (Extensible Markup Language) file and each GUI component
 is described via tags and properties. The important ones for now will
 be the property names as we will need them in order to refer to them in the Python program.
 Other properties can easily be changed via a normal text editor (I can recommend notepad++
-if you are using Windows) or you can set up PyCharm as your default editor for ui files.
+if you are using Windows) or you can set up PyCharm as your default editor for UI files.
+
+XML is - as said - a Markup language. You will learn about it later in the course.
+Other examples of markup language are HTML or Markdown (which is used to create this cookbook)
+
+
+## UML using PlantUML
+
+
+
+## Creating an application with a GUI
+
+We have now created a user interface. In week 1 and 2 of the course we created a small
+program that just used the console as input.
+
+Let us create a fully workable application with the user interface we just created.
+Note that it hasn't been turned into being fully object-oriented - but we will get
+there at the end of the day..
+
+
+
 
 
 
