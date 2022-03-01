@@ -109,10 +109,6 @@ As we are going to create a simple GUI we will not populate the menu bar and the
 (In your assignments you might want to implement menus so
 that you can quickly navigate between different parts of your application).
 
-In the Object Inspector Right-click on the QMenuBar and select "Remove Menubar" and
-do the same for the Status bar. Watch how the menubar (in the top) and status bar 
-(grey line at the bottom) are removed.
-
 Save the GUI using the File Menu -> Save as.
 A good name could be "MyFirstApp.ui" and a good location will be in a newly created Pycharm project.
 
