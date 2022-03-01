@@ -35,7 +35,7 @@ The Cookbook assumes that you have already installed the required Python version
 as described in the 
 [Install guide](https://docs.google.com/document/d/1pYUBz4XfURxj9aH_6geXm-jrBIohgb7S/edit)
 
-## Building a Qt GUI
+## Building a Qt GUI [^](#system-development-cookbook-2022)
 
 The [QT GUI framework](https://www.qt.io/) has been chosen for this course as it is a cross-platform framework 
 (works on Linux, Windows and Mac as well as som other platforms like Android and iOS). 
@@ -56,7 +56,7 @@ There are many quick introductions to PyQT6 on the internet. One can be found
 
 The next sections will teach you how to create a GUI using Qt Designer. 
 
-### Using Qt designer.
+### Using Qt designer [^](#system-development-cookbook-2022)
 Depending on your OS you start Qt designer in different ways.  
 
 **Mac**  
@@ -88,7 +88,7 @@ I will recommend - for now - to have pyqt6 installed in your site libs (and not 
 that you always have the same path to designer.
 
 
-### Creating your first simple GUI
+### Creating your first simple GUI [^](#system-development-cookbook-2022)
 
 When Designer is launched you are met by the following dialog:
 
@@ -202,7 +202,7 @@ For a mockup it can also be practical to set some sample text for the input fiel
 Feel free to do so! And notice that you can save the UI as an image (png) file.
 
 
-### The UI file
+### The UI file [^](#system-development-cookbook-2022)
 
 Let us have a look at the resulting ui file (or the first part of it).
 
@@ -334,7 +334,11 @@ Happy UML'ing!
 
 
 
-## Creating an application with a GUI
+
+
+
+
+## Creating an application with a GUI [^](#system-development-cookbook-2022)
 
 We have now created a user interface. In week 1 and 2 of the course we created a small
 program that just used the console as input.
