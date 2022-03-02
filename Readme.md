@@ -1,13 +1,19 @@
+# System Development Cookbook 2022
+
+## TOC
+
 [Building a GUI](#building-a-qt-gui)  
-[Creating you first GUI](#creating-your-first-simple-gui)  
-[The UI file](#the-ui-file)  
+- [Using Qt Designer](#using-qt-designer)
+- [Creating you first GUI](#creating-your-first-simple-gui)  
+- [The UI file](#the-ui-file)  
+
 [PantUML](#uml-using-plantuml)  
 [Python OOP](#python-oop)  
-[Creating an application using a GUI](#creating-an-application-using-a-gui)
+[Creating an application using a GUI](#creating-an-application-using-a-gui)  
+- [The Python file for the GUI](#the-python-file-for-the-gui)
 
 
 
-# System Development Cookbook 2022
 
 This repository is a meant as a 'bridge' between the theoretical material being
 taught in ['5100-B3-4F22 - Systems Development'](https://kurser.ku.dk/course/ndab19000u/) at Copenhagen University 2022 
@@ -386,6 +392,11 @@ On the input fields I have set the maximum width and also the maximum characters
 I have also used an inputMask (Property Editor) on the CPR-number as "999999-9999" and a maxLength of 11 making it imposible to
 enter anything but the 10 digits. This way I have better control on what the user inputs.
 Same has been done on the Zip code (4 digits).
+
+The TextEdit field has been converted (right click -> morph into) a
+plainTextEdit field has this is more suitable for showing plain text.
+The TextEdit fields default supports HTML...
+
 Finally, I have enabled clearButtonEnabled for almost all fields (so that you can clear them individually)
 
 I didn't find a way to control the position of the OK button using Designer - I wanted it to
@@ -424,7 +435,7 @@ Most likely your final app will be a mixture of what you have Designed in Qt Des
 parts of the GUI done by code.
 
 The "first version" of the app can be found in [Cookbook-GUI](Cookbook-GUI) folder
-If you place the `main.py` and `MyFirstAppGUI.ui` folder in a new python project
+If you place the `main.py` and `MyFirstAppGUI.ui` folder in a new Python project
 you should be able to run the program and get something like this showing up on the screen:
 
 ![First GUI](images/My-First-App-GUI-1.png)
@@ -441,15 +452,165 @@ If you press the key labelled `Clear fields` you will see:
 
 and if you press yes the input fields will be cleared.
 
-### The pyhton file for the GUI
+### The Python file for the GUI
+[to top ^](#system-development-cookbook-2022)
+
+The Python file for the GUI should be more or less self-explanatory through the
+comments in the file.
+
+The imports ensure that you can use the QT widgets and that the ui file can be translated
+to Python code.
+
+Byt the way: if you are curious about what the Python code for the Qt GUI looks like 
+(what Qt Designer does for you), then press "Form->View Python Code" in Qt Designer!
+
+The next part is the Python class that links our program with the Qt ui file.
+
+```python
+class MyFirstAppUi(QtWidgets.QMainWindow):
+```
+
+You can name the class what you want, but the input parameter must match the widget class being
+described in the .ui file. In our case it is a QmainWindow:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+
+```
+(You could also have created Dialog in qt designer. In that case it
+is a QDialog) 
+
+Now the constructor for the class follows 
+
+```python
+    def __init__(self):
+        super(MyFirstAppUi, self).__init__()   # MyFirstAppUi must be the same as the name of the class
+        uic.loadUi('MyFirstAppGUI.ui', self)      # MyFirstAppGUI.ui is the name of your ui file
+
+        # Now define the linking between all your GUI objects (widgets) and the
+        # associated methods. E.g. what method (function) is called when the
+        # 'OK' button is pressed.
+        # Remember that you named the two buttons 'pushButtonOK' and 'pushButtonClear'
+
+        self.pushButtonOK.clicked.connect(self.ok_button_pressed)
+        self.pushButtonClear.clicked.connect(self.clear_button_pressed)
+
+        # Don't forget this line! If you do forget, the GUI won't be visible!!
+
+        self.show()
+```
+
+The constructor tells what `.ui` file is to be loaded and also defines the
+connections between the controllers in you GUI (in this case som push-buttons)
+and there associated methods: `ok_button_pressed` and `clear_button_pressed`
+
+Note that the pushButtonOK and pushButtonClear must match the names that you gave the
+buttons in your GUI (and hence in your .ui file)
+
+Then follow the two methods we just referred to.
+First the method that defines what happens if you press the OK button
+
+```python
+    def ok_button_pressed(self):
+        # This is executed when the OK button is pressed
+        # lets concatenate the values from alle the input fields and write
+        # the result in the textEdit field we created:
+        print("OK button pressed!")
+
+        # get all the values from the input fields
+        name = self.firstNameLineEdit.text()
+        surname = self.surnameLineEdit.text()
+        cpr_number = self.cPRNumberLineEdit.text()
+        street = self.streetLineEdit.text()
+        street_number = self.streetNumberLineEdit.text()
+        ext = self.extLineEdit.text()
+        zip_code = self.zipCodeLineEdit.text()
+        city = self.cityLineEdit.text()
+
+        address1 = " ".join((street, street_number, ext))
+        address2 = " ".join((zip_code, city))
+
+        # Build the output text
+
+        output_text = "Name:\t"+name+" "+surname \
+            + "\n\nCPR-Number:\t"+cpr_number \
+            + "\n\nAddress:\t"+address1 \
+            + "\n\n\t"+address2
+
+        self.plainTextEdit.setPlainText(output_text)
+
+```
+
+The text from the input fields are read by the .text() method.
+Then the output text is being constructed and finally
+the resulting text is displayed in the plainTextEdit widget
+using the `.setPlainText()` method.
+
+The second method defines what to be done if the `Clear Fields` button
+is pressed
+
+```python
+    def clear_button_pressed(self):
+        # This method is used in order to clear all input fields.
+        # A simple, but naive approach will be to call
+        # .clear() for all input fields, e.g. self.firstNameLineEdit.clear()
+        # however this will require that we maintain the method if we add
+        # more fields. A better approach would probably be to find all fields of type
+        # LineEdit and clear them!
+        # But first present the user with a warning message by using QMessagebox
+
+        print('Clear button pressed!')
+
+        button = QtWidgets.QMessageBox.question(self, "Clear fields", "All input fields will be cleared")
+
+        if button == QtWidgets.QMessageBox.StandardButton.Yes:
+            print("Yes!")
+            # Find all fields of type QLineEdit
+            line_edits = self.findChildren(QtWidgets.QLineEdit)
+            # Loop over the fields and clear them
+            for field in line_edits:
+                field.clear()
+        else:
+            print("No!")
+
+```
+
+In this method I programatically create a message box and then
+detects whether the user presses Yes or no. If Yes is pressed then
+a search for all fields of type QLineEdit is done and the result
+is saved in a list. Then an iteration over all fields in the list is done
+and for each field the `.clear()` method is being used.
 
 
+Finally we have
 
+```python
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    window = MyFirstAppUi()
+    app.exec()
 
+```
 
+This basically means that when the Python file is run directly, then the main
+method is called (see e.g. https://realpython.com/python-main-function/ for explanation) and
+the three next lines are executed.
 
+If you on the other hand had developed methods that could be
+used by other Python files (via imports) then the three last lines would not be executed. Quite handy
+if you at the same time made e.g. a converter that could be run directly
+from the command line and at the same time act as a library to be imported in
+Python projects.
 
-
+The first program is now done. We didn't add data validation etc, but
+we have a great platform for doing it
 
 
 
