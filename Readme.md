@@ -100,13 +100,13 @@ that you always have the same path to designer.
 
 When Designer is launched you are met by the following dialog:
 
-![Designer-Launcher](Launch-Designer.png)
+![Designer-Launcher](images/Launch-Designer.png)
 
 Choose 'Main Window' and press create (leave everything else unchanged)
 
 You will then see a window like this:
 
-![Designer-1](Designer-1.png)
+![Designer-1](images/Designer-1.png)
 
 On the left-hand side you see the standard GUI components that are available
 in Qt6. In the middle you see the GUI, that you are currently designing.
@@ -126,7 +126,7 @@ First let us set the title of the Main Window to 'My first App'
 In the Object Inspector click on MainWindow and in the Property editor filter
 on 'title' and change the value of the windowTitle property to 'My first App'.
 
-![Designer-Window-title](Designer-windowTitle.png)
+![Designer-Window-title](images/Designer-windowTitle.png)
 
 
 Now let us add some functionality to the application. Why not use the program we created
@@ -146,7 +146,7 @@ the Designer window and resize it to fit the application
 (yes we could set some more generic constraints - but we won't
 do that for now):
 
-![Designer scrollarea](Designer-Scrollarea.png)
+![Designer scrollarea](images/Designer-Scrollarea.png)
 
 Now we are missing insertion of labels, input fields and
 underneath a textarea widget to display the result.
@@ -159,29 +159,29 @@ It as a label and input field and the layout is made in an 'OS native' fashion.
 
 Drag the "Form Layout" into the application and resize it to a suitable size
 
-![Designer_formlayout](Designer-form-layout.png)
+![Designer_formlayout](images/Designer-form-layout.png)
 
 Now time to insert a form row: Right-click in the form layout and select "Add form layout row".
 Fill in the form like this and press OK:
 
-![Form_row_1st](Designer-form-row.png)
+![Form_row_1st](images/Designer-form-row.png)
 
 The two names are important - those are the ones that at link to your Python code.
 Leave them as suggest.
 
 The result after pressing OK is
-![After_first_row](Designer-after-1st-row.png)
+![After_first_row](images/Designer-after-1st-row.png)
 
 
 Now continue to add rows for surname, cpr-number, street, street number, extension (e.g. 1.tv),
 zipcode and city:
 
-![All-inputs](Designer-all-input.png)
+![All-inputs](images/Designer-all-input.png)
 
 Let us add some 'Push Buttons' For "Register Patient" and "Clear Fields".
 You can right-click on the buttons in order to change the text and the object names.
 
-![Button-object-change](Designer-push-change-text.png)
+![Button-object-change](images/Designer-push-change-text.png)
 
 Finally add a "Text Edit Field" (We will need in order to display the output -
 Yes it will be a boring application: It will display the inputs together with
@@ -190,11 +190,11 @@ an idea of what is possible and easy to create wth QT Designer).
 
 The result should look something like this:
 
-![Final-view](Designer-final-one.png)
+![Final-view](images/Designer-final-one.png)
 
 Using the preview (in the forms menu) I get..
 
-![preview](Designer-preview.png)
+![preview](images/Designer-preview.png)
 
 
 Please notice all the properties you can set on the text fields:
@@ -319,19 +319,19 @@ In Pycharm settings/preferences insert the found result here and you should be
 able to render diagrams in plantUML (note that on the implementation on my Windows laptop this 
 field is empty.)
 
-![graphviz-path](graphviz-path.png)
+![graphviz-path](images/graphviz-path.png)
 
 You should now be ready to create your first diagrams:
 
 Right-click in your project explorer and select new and PlantUML File:
-![new-plantuml](platuml-file-new.png)
+![new-plantuml](images/platuml-file-new.png)
 
 Now select the type of diagram you are going to create.
 
 Here are the generated e xamples of use case and class diagrams:
 
-![usecase](usecasepuml.png)
-![classdiagram](classdiagram-puml.png)
+![usecase](images/usecasepuml.png)
+![classdiagram](images/classdiagram-puml.png)
 
 Full documentation for PlantUML syntax and a collection of examples can be 
 found here https://plantuml.com/ and here https://real-world-plantuml.com/
@@ -348,7 +348,7 @@ Python: https://realpython.com/python3-object-oriented-programming/
 Key take-outs are  
 - Classes vs instances (objects)
 - Methods (at class and instance level)
-- How to instantiate and object (the `__init__` metod - the contructor)
+- How to instantiate and object (the `__init__` method - the constructor)
 - Special Instance methods (`__str__` - to represent the object as a string)
 - Class Inheritance
 
@@ -370,12 +370,85 @@ managed attributes: https://realpython.com/python-property/
 
 For now don't worry too much - we will get to see some examples in the weekly exercises and in this cookbook.
 
+
 ## Creating an application using a GUI
 [to top ^](#system-development-cookbook-2022)
 We have now created a graphical user interface. In week 1 and 2 of the course we created a small
 program that just used the console as input.
 
-Let us create a fully workable application with the user interface we just created.
+Let us create a workable application with the user interface we just created.
+
+I have done small modifications to the user interface by adding layout constraints (vertical, grid,
+or horizontal layout) to the Qwidgets (the red warning signs on the widgets indicated that they
+were missing constraints. This also enabled the scrollbars (which didn't work in the first version). 
+
+On the input fields I have set the maximum width and also the maximum characters.
+I have also used an inputMask (Property Editor) on the CPR-number as "999999-9999" and a maxLength of 11 making it imposible to
+enter anything but the 10 digits. This way I have better control on what the user inputs.
+Same has been done on the Zip code (4 digits).
+Finally, I have enabled clearButtonEnabled for almost all fields (so that you can clear them individually)
+
+I didn't find a way to control the position of the OK button using Designer - I wanted it to
+be at the right side in a separate column. So there I opened the `.ui`
+file in an editor and changed `<item row="2" column="0">` to `<item row="2" column="1">` in the following section:
+
+```xml
+        <item row="2" column="1">
+         <widget class="QPushButton" name="pushButtonOK">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>OK</string>
+          </property>
+         </widget>
+        </item>
+```
+
+
+The application doesn't do all the validation that we implemented in the first weeks.
+But it takes some input and generates som output, so that you will get and idea of how the various
+components of the GUI is being used. I have also added the use of a MessageBox (giving the user a 
+warning before the user clears all fields). This way you can see that you can code the various GUI
+components directly - you actually don't need to use Designer - but it is a tedious work.
+Most likely your final app will be a mixture of what you have Designed in Qt Designer and some
+parts of the GUI done by code.
+
+The "first version" of the app can be found in [Cookbook-GUI](Cookbook-GUI) folder
+If you place the `main.py` and `MyFirstAppGUI.ui` folder in a new python project
+you should be able to run the program and get something like this showing up on the screen:
+
+![First GUI](images/My-First-App-GUI-1.png)
+
+Try to fill out with information and press OK - then you will see something like
+
+![First GUI Filled](images/My-First-App-GUI-filled.png)
+
+Notice the small crosses in the fields that enables you to clear that field only.
+
+If you press the key labelled `Clear fields` you will see:
+
+![First GUI Filled](images/My-First-App-GUI-filled-warning.png)
+
+and if you press yes the input fields will be cleared.
+
+### The pyhton file for the GUI
+
+
+
+
+
+
+
 
 
 
