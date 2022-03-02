@@ -615,9 +615,13 @@ Python projects.
 The first program is now done. We didn't add data validation etc, but
 we have a great platform for doing it.
 
-## Working with classes
+## Working with classes in Python
+[to top ^](#system-development-cookbook-2022)
 
-Let us 
+So far so good! Now let us introduce some classes so that we are
+able to make the code more modular and maintainable.
+
+Let us introduce a Patient class.
 
 
 
