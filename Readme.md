@@ -621,7 +621,51 @@ we have a great platform for doing it.
 So far so good! Now let us introduce some classes so that we are
 able to make the code more modular and maintainable.
 
-Let us introduce a Patient class.
+We would like to hold a list of patients and everytime we add a patient we
+would like to show the updated list in the output window. 
+
+Let us introduce a Patient class to hold the information about the Patients:
+(Put the Patient class in its own file Patient.py)
+
+The Patient class would certain attributes which describes a patient:
+First name, surname, CPR-number, Street name, Street Number and potential extension,
+a zip code and a city name.
+
+We will need a constructor which takes inputs for all these attributes.
+
+```python
+class Patient():
+    def __init__(self, first_name, surname, cpr_number, 
+                 street, street_number, street_ext, zip_code, city):
+        self.first_name = first_name
+        self.surname = surname
+        self.cpr_number = cpr_number
+        self.street = street
+        self.street_number = street_number
+        self.street_ext = street_ext
+        self.zip_code = zip_code
+        self.city =  city
+```
+
+We will also need some methods - apart from the standard "setters and getters" 
+(which in  Python are kind of build-in) we will need a method to get the age 
+(remember we made a function to calculate the age from the CPR-number in one of
+the first exercises) and then we will also need the special instance method `.__str__()`.
+The latter method will be used to print the information for one patient as a nicely
+formatted string.
+
+let us start with the .__str__() method. It is simply a function that returns all the
+information in one line:
+
+```python
+    def __str__():
+        return f"First name: {self.first_name}, Surname: {self.surname}"
+```
+
+
+
+
+
 
 
 
