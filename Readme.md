@@ -348,8 +348,10 @@ Happy UML'ing!
 [to top ^](#system-development-cookbook-2022)
 
 As this is also a course in how to develop software that can easily/easier be reused
-I will simply not reinvent the whell but instead advise you to spend some minutes with this excellent guide on basic OOP in 
-Python: https://realpython.com/python3-object-oriented-programming/ 
+I will simply not reinvent the wheel but instead advise you to spend some minutes with this excellent guide on basic OOP in 
+Python: https://realpython.com/python3-object-oriented-programming/
+(You can choose to register or open the link in incognito mode..)
+
 
 Key take-outs are  
 - Classes vs instances (objects)
@@ -373,6 +375,7 @@ a **strong** recommendation on not to access the attribute from outside the clas
 but it is technically still possible (but please don't!)...
 A good practise would be to go with properties as explained here in order to get
 managed attributes: https://realpython.com/python-property/
+(You can choose to register or open the link in incognito mode..)
 
 For now don't worry too much - we will get to see some examples in the weekly exercises and in this cookbook.
 
@@ -610,7 +613,11 @@ from the command line and at the same time act as a library to be imported in
 Python projects.
 
 The first program is now done. We didn't add data validation etc, but
-we have a great platform for doing it
+we have a great platform for doing it.
+
+## Working with classes
+
+Let us 
 
 
 
