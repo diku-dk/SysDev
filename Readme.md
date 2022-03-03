@@ -665,7 +665,7 @@ information in one line:
         return f"Name: {name}, CPR-Number: {self.cpr_number}, Adress: {address}"
 ```
 
-Det her skal slettes
+
 
 
 
