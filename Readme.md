@@ -12,8 +12,8 @@
 [Creating an application using a GUI](#creating-an-application-using-a-gui)  
 - [The Python file for the GUI](#the-python-file-for-the-gui)
 
-
-
+[Working with Classes in Python](#working-with-classes-in-python)
+- [A note on setters and getters](#a-note-on-setters-and-getters)
 
 This repository is a meant as a 'bridge' between the theoretical material being
 taught in ['5100-B3-4F22 - Systems Development'](https://kurser.ku.dk/course/ndab19000u/) at Copenhagen University 2022 
@@ -711,52 +711,14 @@ case that could e.g. be student, teacher, TA, course administrator etc.)
 
 By the way: You are free to add a 'Validator' class which you can use to validate your user input :wink: .
 
+### A note on setters and getters
+[to top ^](#system-development-cookbook-2022)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'Setters' and 'getters' are methods that are used in object-oriented programming languages to access an object's private attribute.
+You are encouraged to use setters and getters in your projects (e.g. patient.get_address(), patient.set_street("Nørrebrogade"))
+even though it wouldn't be the 'pythonic' way to do it: 
+see e.g. https://python-course.eu/oop/properties-vs-getters-and-setters.php how to use properties.
+This is one of areas where Python differentiates from other OOP languages.
 
