@@ -585,14 +585,14 @@ is pressed
 
 ```
 
-In this method I programatically create a message box and then
+In this method I programmatically create a message box and then
 detects whether the user presses Yes or no. If Yes is pressed then
 a search for all fields of type QLineEdit is done and the result
 is saved in a list. Then an iteration over all fields in the list is done
 and for each field the `.clear()` method is being used.
 
 
-Finally we have
+Finally, we have
 
 ```python
 if __name__ == '__main__':
@@ -622,7 +622,7 @@ So far so good! Now let us introduce some classes so that we are
 able to make the code more modular and maintainable.
 
 We would like to hold a list of patients and everytime we add a patient we
-would like to show the updated list in the output window. 
+would like to show the updated list in the output window - including the patients age. 
 
 Let us introduce a Patient class to hold the information about the Patients:
 (Put the Patient class in its own file Patient.py)
@@ -648,22 +648,69 @@ class Patient():
 ```
 
 We will also need some methods (functions) - apart from the standard "setters and getters" 
-(which in  Python are kind of build-in) we will need a method to get the age 
+(which in  Python are kind of build-in - I will return to that soon) we will need a method to get the age 
 (remember we made a function to calculate the age from the CPR-number in one of
 the first exercises) and then we will also need the special instance method `.__str__()`.
 The latter method will be used to print the information for one patient as a nicely
 formatted string.
 
-Let us start with the .__str__() method. It is simply a function that returns all the
-information in one line:
+Let us start with the `.__str__()` method. It is simply a function that returns all the
+information in one line (the `get_age()` method will be defined just below):
 
 ```python
-    def __str__():
+    def __str__(self):
         name = f"{self.first_name} {self.surname}"
         address = f"{self.street} {self.street_number}, {self.street_ext}, \
         {self.zip_code} {self.city}"
-        return f"Name: {name}, CPR-Number: {self.cpr_number}, Adress: {address}"
+        age = f"{str(self.get_age)}"
+        return f"Name: {name}, CPR-Number: {self.cpr_number}, Adress: {address}, Age: {age} "
 ```
+
+Now let us add a `get_age()` method. We will use the method from the function from the solution from Week2_1
+and turn it into a method (NB! we will also need to do `from datetime import date` and from
+`from stdnum.dk import cpr` for this to work).
+
+```python
+    def get_age(self):
+        cpr_number_in = cpr.compact(self.cpr_number)
+        today_date = date.today()
+        birth_date = cpr.get_birth_date(cpr_number_in)
+        age_date = today_date - birth_date
+        return int(age_date.days/365.2425)
+```
+
+)
+
+As we wanted to let to the GUI update the list of patients, whenever a patient is added,
+we will add a list a of Patients to the `MyFirstAppUi` class and update that list with
+the newly entered patient.
+
+It is all put together in `Cookbook-GUI-2` folder:
+
+The ui file defines the User interface. I have added a File->Exit menu.
+The associated action is associated via `self.actionExit.triggered.connect(self.exit_button_pressed)` and
+the behaviour defined in the `exit_button_pressed` method (in our case the window is just closed).
+The Patient Class and MyFirsAppUI Class have their own python files.
+MyFirsAppUI has been given an extra parameter `patient_list` - check the constructor!
+The idea is to pass the current patient list to the MyFirstAppUI object which then
+is able to update the list.
+
+The main.py initiates an empty patient list.
+It then prints out the list (to show it is empty).
+
+Every time a patient is added in the GUI, a Patient object is created and added to the list.
+The list is then displayed in the GUI.
+
+If the user press file->exit, the window is closed, and we are returned to the __main__ method in main.py.
+Here the updated list of patients is printed to the console.
+
+Hopefully you now have an idea on how to create a GUI with PyQT, how to capture user input,
+how to work with (list of) objects and how to pass information to and from a Window (e.g it could
+be relevant to pass an object with information on the currently logged-in user: In your assigment
+case that could e.g. be student, teacher, TA, course administrator etc.)
+
+By the way: You are free to add a 'Validator' class which you can use to validate your user input :wink: .
+
 
 
 
