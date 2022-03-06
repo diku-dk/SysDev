@@ -685,7 +685,7 @@ As we wanted to let to the GUI update the list of patients, whenever a patient i
 we will add a list a of Patients to the `MyFirstAppUi` class and update that list with
 the newly entered patient.
 
-It is all put together in `Cookbook-GUI-2` folder:
+It is all put together in  the [`Cookbook-GUI-2`](Cookbook-GUI-2) folder:
 
 The ui file defines the User interface. I have added a File->Exit menu.
 The associated action is associated via `self.actionExit.triggered.connect(self.exit_button_pressed)` and
