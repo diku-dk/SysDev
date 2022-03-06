@@ -685,7 +685,7 @@ As we wanted to let to the GUI update the list of patients, whenever a patient i
 we will add a list a of Patients to the `MyFirstAppUi` class and update that list with
 the newly entered patient.
 
-It is all put together in  the [`Cookbook-GUI-2`](Cookbook-GUI-2) folder:
+It is all put together in the [`Cookbook-GUI-2`](Cookbook-GUI-2) folder:
 
 The ui file defines the User interface. I have added a File->Exit menu.
 The associated action is associated via `self.actionExit.triggered.connect(self.exit_button_pressed)` and
@@ -713,8 +713,6 @@ By the way: You are free to add a 'Validator' class which you can use to validat
 
 ### A note on setters and getters
 [to top ^](#system-development-cookbook-2022)
-
-
 
 'Setters' and 'getters' are methods that are used in object-oriented programming languages to access an object's private attribute.
 You are encouraged to use setters and getters in your projects (e.g. patient.get_address(), patient.set_street("Nørrebrogade"))
