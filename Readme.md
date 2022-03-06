@@ -715,7 +715,7 @@ By the way: You are free to add a 'Validator' class which you can use to validat
 [to top ^](#system-development-cookbook-2022)
 
 'Setters' and 'getters' are methods that are used in object-oriented programming languages to access an object's private attribute.
-You are encouraged to use setters and getters in your projects (e.g. patient.get_address(), patient.set_street("Nørrebrogade"))
+You can use setters and getters in your projects (e.g. patient.get_address(), patient.set_street("Nørrebrogade"))
 even though it wouldn't be the 'pythonic' way to do it: 
 see e.g. https://python-course.eu/oop/properties-vs-getters-and-setters.php how to use properties.
 This is one of areas where Python differentiates from other OOP languages.
