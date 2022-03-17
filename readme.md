@@ -31,4 +31,4 @@ Exercise 2 and 3: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/
 
 Exercise 1: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week5_1
 
-Exercise 2 and 3: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week5_2
+Exercise 2 : https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week5_2
