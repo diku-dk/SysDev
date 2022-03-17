@@ -9,6 +9,9 @@ Create a graphical user interface (GUI) for the employee class in task 1```
 The GUI has been created in Designer as a widget with vertical layout and containing
 a form layout widget for the inputs and a horizontal layout widget for the buttons.
 
+![New employee](NewEmployeeForm.png)
+
+
 `NewEmployeeGUI.py` loads the `NewEmployee.ui` file and defines the control methods
 for the buttons.
 Note that I have updated the `Employee` class in `Employee.py` with a try/except
