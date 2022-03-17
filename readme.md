@@ -26,3 +26,9 @@ Exercise 1: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week2_
 Exercise 1: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week4_1
 
 Exercise 2 and 3: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week4_2and3
+
+# Week 5
+
+Exercise 1: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week5_1
+
+Exercise 2 and 3: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week5_2
