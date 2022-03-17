@@ -2,7 +2,7 @@ Suggested solution to Exercise 5_3:
 
 Task:
 ```
-Create a graphical user interface (GUI) for the employee class in task 1```
+Create a graphical user interface (GUI) for the employee class in task 1
 ```
 
 
