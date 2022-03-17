@@ -1,4 +1,4 @@
-Suggestion solution to Exercise 5_2:
+Suggested solution to Exercise 5_2:
 
 Task:
 ```
