@@ -1,11 +1,18 @@
 Systems Development 2022
 ========================
 
-### Solutions to Exercises
+# Cookbook
+
+The cookbook can be found here
+
+https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Cookbook
+
+
+# Solutions to Exercises
 
 Please find proposed solutions to the Exercises as branches
 
-# Week 1
+## Week 1
 
 Exercise 1: You already tried the installation with a Tetris game!
 
@@ -17,17 +24,17 @@ Exercise 4: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week1_
 
 Exercise 5: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week1_5
 
-# Week 2
+## Week 2
 
 Exercise 1: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week2_1
 
-# Week 4
+## Week 4
 
 Exercise 1: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week4_1
 
 Exercise 2 and 3: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week4_2and3
 
-# Week 5
+## Week 5
 
 Exercise 1: https://github.com/jakob-andersen/SystemsDevelopment2022/tree/Week5_1
 
