@@ -7,7 +7,12 @@ class NewEmployeeGUI(QtWidgets.QWidget):
         super(NewEmployeeGUI, self).__init__()      # MyFirstAppUi must be the same as the name of the class
         uic.loadUi('UI/NewEmployee.ui', self)      # MyFirstAppGUI.ui is the name of your ui file
 
+
         self.list_employee = list_employee_before
+
+        print("-" * 30 + "\nStarting the GUI we have the following employees")
+        for e in self.list_employee:
+            print(e)
 
         self.pushButtonOK.clicked.connect(self.ok_button_pressed)
         self.pushButtonClear.clicked.connect(self.clear_button_pressed)

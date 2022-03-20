@@ -29,10 +29,10 @@ def main():
         print(e)
 
     app = QtWidgets.QApplication(sys.argv)
-    NewEmployeeGUI(list_employees)
+    new_employee_window = NewEmployeeGUI(list_employees)
     app.exec()
 
-    print("-" * 30 + "\nWe now have the following employees")
+    print("-" * 30 + "\nAfter we have the following employees")
     for e in list_employees:
         print(e)
 
