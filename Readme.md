@@ -2,15 +2,12 @@ Suggested solution to Exercise 5_4:
 
 Task:
 
-*Create five additional classes: Course, CourseRequest, AdminPersonal, CourseResponsible and Teacher. 
-
+*Create five additional classes: Course, CourseRequest, AdminPersonal, CourseResponsible and Teacher.
 Course represents a university course, CourseRequest includes the request for a course on a given date.
-
 AdminPersonal class represents an employee at an educational institution, 
 Teacher is a class that represents an instructor in a university, and a course responsible is 
 a special type of teacher, that on top of the responsibilities of a teacher, can request for course 
 changes. 
-
 AdminPersonal will have a set of course request to process, and can accept a course request 
 or deny it.*
 
