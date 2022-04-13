@@ -39,6 +39,9 @@ SearchEmployee.ui defines a widget with a search form, where you can search an e
 Pressing OK will make this the active/current employee in the ActiveModel class and can then e.g. be used
 if you want to present a Course schedule for that employee... (for you to program)
 
+![View](View.png)
+
+
 ## Controller
 
 The Controller folder holds the classes which load the ui files from the view and handles the user input
