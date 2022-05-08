@@ -43,3 +43,7 @@ Exercise 2 : https://github.com/diku-dk/SysDev/tree/Week5_2
 Exercise 3 : https://github.com/diku-dk/SysDev/tree/Week5_3
 
 Exercise 4 : https://github.com/diku-dk/SysDev/tree/Week5_4
+
+## Week 8
+
+Exercise 1: https://github.com/diku-dk/SysDev/tree/Week8_1
