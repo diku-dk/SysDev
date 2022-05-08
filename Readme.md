@@ -4,20 +4,20 @@ Task:
 
 *Revise the GUI in the exercise session in Lecture 7, and adapt your program so it implements the MVC pattern.*
 
-In the solution to week 5 I have already adopted the MVC pattern, so
+In the solution to week 5 exercise 4, I have already adopted the MVC pattern, so
 this is almost a replay.
 
 I have instead added a test using the pytest framework.
 See https://www.jetbrains.com/help/pycharm/pytest.html for how to set this up
 
-If you prefer to use the unittests - feel free to do so, it is a matter of taste.
+If you prefer to use the unittests framework (as in the example in the course lecture) - feel free to do so, it is a matter of taste.
 
 The Tests (test) have been placed in a separate Test folder.
 Currently, the test will check if the employee class' get_age method
 is working correctly (it will fail if you run this test next year -
 consider how you could make the test more generic...)
 
-Take a closer look at `@pytest.fixture` which allows you to generate code/objects for
+NB! Take a closer look at `@pytest.fixture` which allows you to generate code/objects for
 reuse in your tests
 
 When running the test you will get a "Test Results" report showing:
@@ -42,12 +42,10 @@ Then you will see something like this:
 ![Coverage](Test_coverage.png)
 
 As you see each directory and file is annotated with the
-level of coverage. A well written unit test should cover all code.
-(to a certain extent)
-
-In this course we will focus on testing the methods in our model.
+level of coverage. A well written unit test should cover all and not only parts of the code.
+To a certain extent....In this course we will focus on testing the methods in our model.
 Testing the actual pyqt GUI can be quite tricky and will involve pytest plugin
-libraries like https://pypi.org/project/pytest-qt/
+libraries like https://pypi.org/project/pytest-qt/ which we will not cover here.
 
 
 
