@@ -487,7 +487,7 @@ described in the .ui file. In our case it is a QmainWindow:
     <y>0</y>
 
 ```
-(You could also have created Dialog in qt designer. In that case it
+    (You could also have created Dialog in qt designer. In that case it
 is a QDialog) 
 
 Now the constructor for the class follows 
