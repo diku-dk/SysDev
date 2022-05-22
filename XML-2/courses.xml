@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kurser>
+  <kursus>
+    <fakultet>DTU</fakultet>
+    <kursusID>R080T</kursusID>
+    <kursusnavn>Teknik for læger</kursusnavn>
+    <studerende>
+      <student>
+        <fornavn>Anders</fornavn>
+        <efternavn>Andersen</efternavn>
+        <cpr_nummer>100181-0101</cpr_nummer>
+        <telefon>+4512121212</telefon>
+        <elpost>anders.andersen@company.com</elpost>
+      </student>
+      <student>
+        <fornavn>Bente</fornavn>
+        <efternavn>Bentsen</efternavn>
+        <cpr_nummer>020282-0202</cpr_nummer>
+        <telefon>+4566666666</telefon>
+        <elpost>bente.bentsen@company.com</elpost>
+      </student>
+    </studerende>
+  </kursus>
+  <kursus>
+    <fakultet>KU</fakultet>
+    <kursusID>D0CT3R</kursusID>
+    <kursusnavn>Sundhed for ingeniører</kursusnavn>
+    <studerende>
+      <student>
+        <fornavn>Calle</fornavn>
+        <efternavn>Callesen</efternavn>
+        <cpr_nummer>020283-0203</cpr_nummer>
+        <telefon>+4566666213</telefon>
+        <elpost>calle.callesen@company.com</elpost>
+      </student>
+      <student>
+        <fornavn>Ditte</fornavn>
+        <efternavn>Dittesen</efternavn>
+        <cpr_nummer>020280-0242</cpr_nummer>
+        <telefon>+4534666213</telefon>
+        <elpost>ditte.dittesen@company.com</elpost>
+      </student>
+    </studerende>
+  </kursus>
+</kurser>

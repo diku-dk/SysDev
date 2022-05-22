@@ -15,6 +15,8 @@
 [Working with Classes in Python](#working-with-classes-in-python)
 - [A note on setters and getters](#a-note-on-setters-and-getters)
 
+[Generating and parsing XML files](#generating-and-parsing-xml-files)
+
 This repository is a meant as a 'bridge' between the theoretical material being
 taught in ['5100-B3-4F22 - Systems Development'](https://kurser.ku.dk/course/ndab19000u/) at Copenhagen University 2022 
 and the practical student exercises and assignments.
@@ -157,7 +159,7 @@ do that for now):
 Now we are missing insertion of labels, input fields and
 underneath a textarea widget to display the result.
 
-We could do this by adding labels and Line Edit widgets and place them manualer.
+We could do this by adding labels and Line Edit widgets and place them manually.
 The Grid layout or vertical layouts could help os in order to distribute
 the widgets evenly over the screen.  
 However we will use the [Form Layout](https://doc.qt.io/qt-6/qformlayout.html).
@@ -189,7 +191,7 @@ You can right-click on the buttons in order to change the text and the object na
 
 ![Button-object-change](images/Designer-push-change-text.png)
 
-Finally add a "Text Edit Field" (We will need in order to display the output -
+Finally, add a "Text Edit Field" (We will need in order to display the output -
 Yes it will be a boring application: It will display the inputs together with
 a computed age - it is only made for demonstration purposes and to give you
 an idea of what is possible and easy to create wth QT Designer).
@@ -389,10 +391,10 @@ Let us create a workable application with the user interface we just created.
 
 I have done small modifications to the user interface by adding layout constraints (vertical, grid,
 or horizontal layout) to the Qwidgets (the red warning signs on the widgets indicated that they
-were missing constraints. This also enabled the scrollbars (which didn't work in the first version). 
+were missing constraints). This also enabled the scrollbars (which didn't work in the first version). 
 
 On the input fields I have set the maximum width and also the maximum characters.
-I have also used an inputMask (Property Editor) on the CPR-number as "999999-9999" and a maxLength of 11 making it imposible to
+I have also used an inputMask (Property Editor) on the CPR-number as "999999-9999" and a maxLength of 11 making it impossible to
 enter anything but the 10 digits. This way I have better control on what the user inputs.
 Same has been done on the Zip code (4 digits).
 
@@ -612,7 +614,7 @@ if you at the same time made e.g. a converter that could be run directly
 from the command line and at the same time act as a library to be imported in
 Python projects.
 
-The first program is now done. We didn't add data validation etc, but
+The first program is now done. We didn't add data validation etc., but
 we have a great platform for doing it.
 
 ## Working with classes in Python
@@ -634,7 +636,7 @@ a zip code and a city name.
 We will need a constructor which takes inputs for all these attributes.
 
 ```python
-class Patient():
+class Patient:
     def __init__(self, first_name, surname, cpr_number, 
                  street, street_number, street_ext, zip_code, city):
         self.first_name = first_name
@@ -663,7 +665,7 @@ information in one line (the `get_age()` method will be defined just below):
         address = f"{self.street} {self.street_number}, {self.street_ext}, \
         {self.zip_code} {self.city}"
         age = f"{str(self.get_age)}"
-        return f"Name: {name}, CPR-Number: {self.cpr_number}, Adress: {address}, Age: {age} "
+        return f"Name: {name}, CPR-Number: {self.cpr_number}, Address: {address}, Age: {age} "
 ```
 
 Now let us add a `get_age()` method. We will use the method from the function from the solution from Week2_1
@@ -705,7 +707,7 @@ If the user press file->exit, the window is closed, and we are returned to the _
 Here the updated list of patients is printed to the console.
 
 Hopefully you now have an idea on how to create a GUI with PyQT, how to capture user input,
-how to work with (list of) objects and how to pass information to and from a Window (e.g it could
+how to work with (list of) objects and how to pass information to and from a Window (e.g. it could
 be relevant to pass an object with information on the currently logged-in user: In your assigment
 case that could e.g. be student, teacher, TA, course administrator etc.)
 
@@ -719,4 +721,21 @@ You can use setters and getters in your projects (e.g. patient.get_address(), pa
 even though it wouldn't be the 'pythonic' way to do it: 
 see e.g. https://python-course.eu/oop/properties-vs-getters-and-setters.php how to use properties.
 This is one of areas where Python differentiates from other OOP languages.
+
+## Generating and parsing XML files
+[to top ^](#system-development-cookbook-2022)
+
+In your assignment you are asked to generate XML files from you data and import data from XML files into your system.
+You can here find two examples of how this can be achieved.
+
+The first method found in the [XML](XML) folder is - as explained - a quick
+and dirty solution with some restrictions.
+
+The second (preferred) method can be found in [XML-2](XML-2) and is a much more
+flexible approach that e.g. decouples the class attribute names from the XML tag names.
+(e.g. allowing you to call the attributes "phone_number" but the corresponding XML tag name "telefonnummer").
+It will also work faster for large systems, as it doesn't have to do an intermediate translation to json.
+
+Read the Readme files in the two folders for better understanding.
+
 

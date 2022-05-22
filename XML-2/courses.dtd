@@ -1,0 +1,49 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT kurser (kursus)+>
+<!ATTLIST kurser
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT kursus (fakultet,kursusID,kursusnavn,studerende)>
+<!ATTLIST kursus
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT fakultet (#PCDATA)>
+<!ATTLIST fakultet
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT kursusID (#PCDATA)>
+<!ATTLIST kursusID
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT kursusnavn (#PCDATA)>
+<!ATTLIST kursusnavn
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT studerende (student)+>
+<!ATTLIST studerende
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT student (fornavn,efternavn,cpr_nummer,telefon,elpost)>
+<!ATTLIST student
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT fornavn (#PCDATA)>
+<!ATTLIST fornavn
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT efternavn (#PCDATA)>
+<!ATTLIST efternavn
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT cpr_nummer (#PCDATA)>
+<!ATTLIST cpr_nummer
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT telefon (#PCDATA)>
+<!ATTLIST telefon
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT elpost (#PCDATA)>
+<!ATTLIST elpost
+  xmlns CDATA #FIXED ''>

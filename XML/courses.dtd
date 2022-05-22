@@ -1,0 +1,49 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT courses (course)+>
+<!ATTLIST courses
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT course (faculty,courseID,courseName,students)>
+<!ATTLIST course
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT faculty (#PCDATA)>
+<!ATTLIST faculty
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT courseID (#PCDATA)>
+<!ATTLIST courseID
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT courseName (#PCDATA)>
+<!ATTLIST courseName
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT students (student)+>
+<!ATTLIST students
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT student (first_name,last_name,cpr_number,phone,email)>
+<!ATTLIST student
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT first_name (#PCDATA)>
+<!ATTLIST first_name
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT last_name (#PCDATA)>
+<!ATTLIST last_name
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT cpr_number (#PCDATA)>
+<!ATTLIST cpr_number
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT phone (#PCDATA)>
+<!ATTLIST phone
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST email
+    xmlns CDATA #FIXED ''>
