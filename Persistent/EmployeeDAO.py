@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from DAO import DAO
+from Persistent.DAO import DAO
 from Model.Employee import Employee
 from typing import List  # needed to be able to declare list type
 

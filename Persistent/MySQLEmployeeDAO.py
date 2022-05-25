@@ -1,9 +1,9 @@
-from EmployeeDAO import EmployeeDAO
+from Persistent.EmployeeDAO import EmployeeDAO
 from Model.Employee import Employee
 import mysql.connector
 from mysql.connector import errorcode
 from mysql.connector import pooling
-import EmpSearchType
+from Persistent.EmpSearchType import EmpSearchType
 from typing import List  # needed to be able to declare list type
 
 

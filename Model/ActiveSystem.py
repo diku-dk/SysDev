@@ -1,7 +1,8 @@
 from Model.Employee import Employee
 from Model.Course import Course
+from Persistent.MySQLEmployeeDAO import MySQLEmployeeDAO
 
-class ActiveModel(object):
+class ActiveSystem(object):
     """
     This is the system model
     """
@@ -9,6 +10,7 @@ class ActiveModel(object):
     list_employee: [Employee] =  []
     list_courses: [Course] = []
     current_employee: Employee = None
+    dao: MySQLEmployeeDAO = None
 
     @classmethod
     def add_employee(cls, e):
@@ -25,3 +27,11 @@ class ActiveModel(object):
     @classmethod
     def get_employee_list(cls):
         return cls.list_employee
+
+    @classmethod
+    def set_dao(cls, dao):
+        cls.dao = dao
+
+    @classmethod
+    def get_dao(cls):
+        return cls.dao

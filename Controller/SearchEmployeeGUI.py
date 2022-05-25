@@ -1,6 +1,6 @@
 from PyQt6 import QtWidgets, uic
-from Model.ActiveModel import Employee
-from Model.ActiveModel import ActiveModel
+from Model.ActiveSystem import Employee
+from Model.ActiveSystem import ActiveSystem
 
 
 class SearchEmployeeGUI(QtWidgets.QWidget):
@@ -26,7 +26,7 @@ class SearchEmployeeGUI(QtWidgets.QWidget):
         search_cpr = self.cPRNumberLineEdit.text()
         print("Search cpr:", search_cpr)
 
-        for e in ActiveModel.get_employee_list():
+        for e in ActiveSystem.get_employee_list():
             print(e.get_cpr_number())
             if e.get_cpr_number() == search_cpr:
                 self.firstNameLineEdit.setText(e.get_first_name())
@@ -48,16 +48,16 @@ class SearchEmployeeGUI(QtWidgets.QWidget):
         print("search_employee at OK: ", self.search_employee)
 
         if self.search_employee is not None:
-            ActiveModel.set_current_employee(self.search_employee)
+            ActiveSystem.set_current_employee(self.search_employee)
 
         # You could create an alert message here stating if no employee was found
 
         print("-" * 30 + "\nThe Model has the following employees")
-        for e in ActiveModel.get_employee_list():
+        for e in ActiveSystem.get_employee_list():
             print(e)
 
         print("-" * 30 + "\nModel has the active employee ")
-        print(ActiveModel.get_current_employee())
+        print(ActiveSystem.get_current_employee())
 
         # If started from the stacked widget we want to return to the default window:
         if type(self.parent()) == QtWidgets.QStackedWidget:
@@ -99,11 +99,11 @@ class SearchEmployeeGUI(QtWidgets.QWidget):
             print("Yes!")
 
             print("-" * 30 + "\nThe Model has the following employees")
-            for e in ActiveModel.get_employee_list():
+            for e in ActiveSystem.get_employee_list():
                 print(e)
 
             print("-" * 30 + "\nModel has the active employee ")
-            print(ActiveModel.get_current_employee())
+            print(ActiveSystem.get_current_employee())
 
             print(type(self.parent()))
             if type(self.parent()) == QtWidgets.QStackedWidget:

@@ -1,6 +1,6 @@
 from PyQt6 import QtWidgets, uic
 from Model.Employee import Employee
-from Model.ActiveModel import ActiveModel
+from Model.ActiveSystem import ActiveSystem
 
 
 class NewEmployeeGUI(QtWidgets.QWidget):
@@ -9,7 +9,7 @@ class NewEmployeeGUI(QtWidgets.QWidget):
         uic.loadUi('View/NewEmployee.ui', self)
         print("NewEmployeeGUI called")
         print("-" * 30 + "\nGUI: We have the following employees in the active model")
-        for e in ActiveModel.get_employee_list():
+        for e in ActiveSystem.get_employee_list():
             print(e)
 
         self.pushButtonOK.clicked.connect(self.ok_button_pressed)
@@ -40,7 +40,9 @@ class NewEmployeeGUI(QtWidgets.QWidget):
 
             # Let us update the list off employees and print it
 
-            ActiveModel.add_employee(employee)
+            ActiveSystem.add_employee(employee)
+            empdao=ActiveSystem.get_dao()
+            empdao.insert_employee(employee)
 
         except Exception as e:
             print("Arrgh! Something went wrong!!", e)
@@ -55,11 +57,11 @@ class NewEmployeeGUI(QtWidgets.QWidget):
                 field.clear()
 
         print("-" * 30 + "\nThe Model has the following employees")
-        for e in ActiveModel.get_employee_list():
+        for e in ActiveSystem.get_employee_list():
             print(e)
 
         print("-" * 30 + "\nModel has the active employee ")
-        print(ActiveModel.get_current_employee())
+        print(ActiveSystem.get_current_employee())
 
     def clear_button_pressed(self):
         # This method is used in order to clear all input fields.
